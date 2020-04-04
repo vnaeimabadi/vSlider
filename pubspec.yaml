@@ -1,8 +1,8 @@
 name: v_slider
 description: Slider for flutter
-version: 0.0.2
+version: 0.0.3
 author: vali naeimabadi
-homepage: http://vali.vasfa.ir/
+homepage: https://github.com/vnaeimabadi/vSlider
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
