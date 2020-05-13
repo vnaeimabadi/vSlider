@@ -31,18 +31,24 @@ class _SliderState extends State<Slider> {
       height: this.widget.height,
       width: this.widget.width,
       color: this.widget.color,
-      child: (widget.items == null || widget.items.length <= 0) &&
-              (widget.imagesPath == null || widget.imagesPath.length <= 0)
-          ? Container()
+      child: (widget.items == null || widget.items.length <= 0)
+          ? (widget.imagesPath == null || widget.imagesPath.length <= 0)
+              ? Container()
+              : PageView.builder(
+                  // store this controller in a State to save the carousel scroll position
+                  controller: PageController(viewportFraction: 0.85),
+                  onPageChanged: (int index) => setState(() => _index = index),
+                  itemBuilder: (BuildContext context, int itemIndex) {
+                    return myImageSliderBanner(itemIndex); //_buildCarouselItem(context, 0, itemIndex);
+                  },
+                  itemCount: widget.imagesPath.length,
+                )
           : PageView.builder(
               // store this controller in a State to save the carousel scroll position
               controller: PageController(viewportFraction: 0.85),
               onPageChanged: (int index) => setState(() => _index = index),
               itemBuilder: (BuildContext context, int itemIndex) {
-                return (widget.items == null || widget.items.length <= 0)
-                    ? widget.items[itemIndex]
-                    : myImageSliderBanner(
-                        itemIndex); //_buildCarouselItem(context, 0, itemIndex);
+                return widget.items[itemIndex]; //_buildCarouselItem(context, 0, itemIndex);
               },
               itemCount: widget.items.length,
             ),
