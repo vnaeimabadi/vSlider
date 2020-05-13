@@ -1,6 +1,0 @@
-package com.vasfa.example
-
-import io.flutter.embedding.android.FlutterActivity
-
-class MainActivity: FlutterActivity() {
-}

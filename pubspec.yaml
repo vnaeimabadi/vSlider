@@ -1,6 +1,6 @@
-name: vSlider
+name: v_slider
 description: Slider for flutter
-version: 0.0.3
+version: 0.0.5+1
 author: vali naeimabadi
 homepage: https://github.com/vnaeimabadi/vSlider
 
@@ -10,6 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  transparent_image: ^1.0.0
 
 dev_dependencies:
   flutter_test:

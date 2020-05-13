@@ -1,3 +1,3 @@
-library vSlider;
+library vslider;
 
 export './src/slider.dart';
